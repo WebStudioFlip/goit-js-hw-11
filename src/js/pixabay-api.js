@@ -9,6 +9,7 @@ export class PixabayAPI {
   constructor(keyword = null) {
     this.page = 1;
     this.keyword = keyword;
+    this.perPage = 40
   }
 
   // ?q=${this.keyword}&page=${this.page}&per_page=40&key=${this.#API_KEY}
@@ -18,7 +19,7 @@ export class PixabayAPI {
       params: {
         q: this.keyword,
         page: this.page,
-        per_page: 40,
+        per_page: this.perPage,
         key: this.#API_KEY,
         image_type: "photo",
          orientation: "horizontal",
